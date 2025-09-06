@@ -1,0 +1,12 @@
+apiVersion: rbac.authorization.k8s.io/v1
+kind: RoleBinding
+metadata:
+  name: edit-pods
+  namespace: demo
+subjects:
+- kind: User
+  name: adam
+roleRef:
+  kind: Role
+  name: pod-editor
+  apiGroup: rbac.authorization.k8s.io
